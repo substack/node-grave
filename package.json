@@ -1,0 +1,22 @@
+{
+    "name" : "grave",
+    "description" : "Version tracking for couchdb views with cradle",
+    "version" : "0.0.1",
+    "repository" : {
+        "type" : "git",
+        "url" : "git://github.com/substack/node-grave.git"
+    },
+    "author" : "James Halliday <mail@substack.net> (http://substack.net)",
+    "main" : "./index.js",
+    "directories" : {
+        "lib" : ".",
+        "test" : "./test",
+        "examples" : "./examples"
+    },
+    "dependencies" : {
+        "cradle" : ">=0.5.5"
+    },
+    "engines" : {
+        "node" : ">=0.4.0"
+    }
+}
