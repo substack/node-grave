@@ -26,7 +26,6 @@ var Design = exports.Design = function (db, name, version) {
     this.document = {
         _id : '_design/' + name,
         version : version,
-        views : {},
     };
     
     if (!semver.valid(version)) {
@@ -40,7 +39,18 @@ var Design = exports.Design = function (db, name, version) {
 };
 
 Design.prototype.view = function (name, doc) {
+    if (!this.views) this.views = {};
     this.document.views[name] = doc;
+};
+
+Design.prototype.list = function (name, doc) {
+    if (!this.lists) this.lists = {};
+    this.document.lists[name] = doc;
+};
+
+Design.prototype.update = function (name, doc) {
+    if (!this.updates) this.updates = {};
+    this.document.updates[name] = doc;
 };
 
 Design.prototype.end = function (cb) {
