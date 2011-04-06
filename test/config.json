@@ -1,0 +1,4 @@
+{
+    "db" : [ "localhost", 5984 ],
+    "testdb" : "gravetest"
+}

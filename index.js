@@ -39,17 +39,17 @@ var Design = exports.Design = function (db, name, version) {
 };
 
 Design.prototype.view = function (name, doc) {
-    if (!this.views) this.views = {};
+    if (!this.document.views) this.document.views = {};
     this.document.views[name] = doc;
 };
 
 Design.prototype.list = function (name, doc) {
-    if (!this.lists) this.lists = {};
+    if (!this.document.lists) this.document.lists = {};
     this.document.lists[name] = doc;
 };
 
 Design.prototype.update = function (name, doc) {
-    if (!this.updates) this.updates = {};
+    if (!this.document.updates) this.document.updates = {};
     this.document.updates[name] = doc;
 };
 
