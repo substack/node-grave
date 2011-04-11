@@ -77,10 +77,13 @@ Design.prototype.end = function (cb) {
         else if (e) {
             cb(e);
         }
-        else if (semver.lt(ex.version, doc.version)) {
-            cb('Rollbacks not yet implemented');
+        else if (!ex.version) {
+            db.save(doc._id, doc, cb);
         }
         else if (semver.lt(doc.version, ex.version)) {
+            cb('Rollbacks not yet implemented');
+        }
+        else if (semver.lt(ex.version, doc.version)) {
             db.save(doc._id, doc, cb);
         }
     });
