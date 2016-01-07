@@ -86,5 +86,8 @@ Design.prototype.end = function (cb) {
         else if (semver.lt(ex.version, doc.version)) {
             db.save(doc._id, doc, cb);
         }
+        else if (semver.eq(doc.version, ex.version)) {
+            cb(undefined, ex);
+        }
     });
 };
